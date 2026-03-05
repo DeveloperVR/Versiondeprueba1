@@ -1,0 +1,184 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# File Created: 05.10.2016 18:38:39
+
+newmtl pro5_apple1
+	Ns 10.000000
+	Ni 1.500000
+	d 1.000000
+	Tr 0.000000
+	Tf 1.000000 1.000000 1.000000 
+	illum 2
+	Ka 1.000000 1.000000 1.000000
+	Kd 1.000000 1.000000 1.000000
+	Ks 0.000000 0.000000 0.000000
+	Ke 0.000000 0.000000 0.000000
+	map_Ka G:\Downloads\plastic-basket-canastas-plasticas-1.snapshot.1\END\pro5_apple.jpg
+	map_Kd G:\Downloads\plastic-basket-canastas-plasticas-1.snapshot.1\END\pro5_apple.jpg
+
+newmtl WoodFine0032_1_S1
+	Ns 10.000000
+	Ni 1.500000
+	d 1.000000
+	Tr 0.000000
+	Tf 1.000000 1.000000 1.000000 
+	illum 2
+	Ka 1.000000 1.000000 1.000000
+	Kd 1.000000 1.000000 1.000000
+	Ks 0.000000 0.000000 0.000000
+	Ke 0.000000 0.000000 0.000000
+
+newmtl Verde_A1
+	Ns 41.000000
+	Ni 1.500000
+	d 1.000000
+	Tr 0.000000
+	Tf 1.000000 1.000000 1.000000 
+	illum 2
+	Ka 0.588235 0.588235 0.588235
+	Kd 0.588235 0.588235 0.588235
+	Ks 0.549000 0.549000 0.549000
+	Ke 0.000000 0.000000 0.000000
+	map_Ka G:\Downloads\plastic-basket-canastas-plasticas-1.snapshot.1\END\Canasta_60x40x32_Verde_1_diffuse.jpg
+	map_Kd G:\Downloads\plastic-basket-canastas-plasticas-1.snapshot.1\END\Canasta_60x40x32_Verde_1_diffuse.jpg
+	map_bump Map__4_Normal_Bump.tga
+
+newmtl Rs500
+	Ns 31.000000
+	Ni 1.500000
+	d 1.000000
+	Tr 0.000000
+	Tf 1.000000 1.000000 1.000000 
+	illum 2
+	Ka 0.588235 0.588235 0.588235
+	Kd 0.588235 0.588235 0.588235
+	Ks 0.261000 0.261000 0.261000
+	Ke 0.000000 0.000000 0.000000
+	map_Ka G:\Downloads\plastic-basket-canastas-plasticas-1.snapshot.1\END\Rupies500.jpg
+	map_Kd G:\Downloads\plastic-basket-canastas-plasticas-1.snapshot.1\END\Rupies500.jpg
+	map_bump Map__305_Normal_Bump.tga
+
+newmtl Giallo_A1
+	Ns 41.000000
+	Ni 1.500000
+	d 1.000000
+	Tr 0.000000
+	Tf 1.000000 1.000000 1.000000 
+	illum 2
+	Ka 0.588235 0.588235 0.588235
+	Kd 0.588235 0.588235 0.588235
+	Ks 0.549000 0.549000 0.549000
+	Ke 0.000000 0.000000 0.000000
+	map_Ka G:\Downloads\plastic-basket-canastas-plasticas-1.snapshot.1\END\Canasta_60x40x32_Yellow_1_diffuse.jpg
+	map_Kd G:\Downloads\plastic-basket-canastas-plasticas-1.snapshot.1\END\Canasta_60x40x32_Yellow_1_diffuse.jpg
+	map_bump Map__4_Normal_Bump.tga
+
+newmtl Azur_A1
+	Ns 41.000000
+	Ni 1.500000
+	d 1.000000
+	Tr 0.000000
+	Tf 1.000000 1.000000 1.000000 
+	illum 2
+	Ka 0.588235 0.588235 0.588235
+	Kd 0.588235 0.588235 0.588235
+	Ks 0.549000 0.549000 0.549000
+	Ke 0.000000 0.000000 0.000000
+	map_Ka G:\Downloads\plastic-basket-canastas-plasticas-1.snapshot.1\END\Canasta_60x40x32_Azzurra_1_diffuse.jpg
+	map_Kd G:\Downloads\plastic-basket-canastas-plasticas-1.snapshot.1\END\Canasta_60x40x32_Azzurra_1_diffuse.jpg
+	map_bump Map__4_Normal_Bump.tga
+
+newmtl Red_A1
+	Ns 41.000000
+	Ni 1.500000
+	d 1.000000
+	Tr 0.000000
+	Tf 1.000000 1.000000 1.000000 
+	illum 2
+	Ka 0.588235 0.588235 0.588235
+	Kd 0.588235 0.588235 0.588235
+	Ks 0.549000 0.549000 0.549000
+	Ke 0.000000 0.000000 0.000000
+	map_Ka G:\Downloads\plastic-basket-canastas-plasticas-1.snapshot.1\END\Canasta_60x40x32_Red_1_diffuse.jpg
+	map_Kd G:\Downloads\plastic-basket-canastas-plasticas-1.snapshot.1\END\Canasta_60x40x32_Red_1_diffuse.jpg
+	map_bump Map__4_Normal_Bump.tga
+
+newmtl Apple_texture_2
+	Ns 10.000000
+	Ni 1.500000
+	d 1.000000
+	Tr 0.000000
+	Tf 1.000000 1.000000 1.000000 
+	illum 2
+	Ka 1.000000 1.000000 1.000000
+	Kd 1.000000 1.000000 1.000000
+	Ks 0.144000 0.144000 0.144000
+	Ke 0.000000 0.000000 0.000000
+	map_Ka G:\Downloads\plastic-basket-canastas-plasticas-1.snapshot.1\END\pro5_apple.jpg
+	map_Kd G:\Downloads\plastic-basket-canastas-plasticas-1.snapshot.1\END\pro5_apple.jpg
+
+newmtl Color_C16
+	Ns 10.000000
+	Ni 1.500000
+	d 1.000000
+	Tr 0.000000
+	Tf 1.000000 1.000000 1.000000 
+	illum 2
+	Ka 0.400000 0.200000 0.000000
+	Kd 0.400000 0.200000 0.000000
+	Ks 0.144000 0.144000 0.144000
+	Ke 0.000000 0.000000 0.000000
+
+newmtl Apple_texture_green
+	Ns 10.000000
+	Ni 1.500000
+	d 1.000000
+	Tr 0.000000
+	Tf 1.000000 1.000000 1.000000 
+	illum 2
+	Ka 1.000000 1.000000 1.000000
+	Kd 1.000000 1.000000 1.000000
+	Ks 0.144000 0.144000 0.144000
+	Ke 0.000000 0.000000 0.000000
+	map_Ka G:\Downloads\plastic-basket-canastas-plasticas-1.snapshot.1\END\Apple texture green.jpg
+	map_Kd G:\Downloads\plastic-basket-canastas-plasticas-1.snapshot.1\END\Apple texture green.jpg
+
+newmtl skp_front_default
+	Ns 10.000000
+	Ni 1.500000
+	d 1.000000
+	Tr 0.000000
+	Tf 1.000000 1.000000 1.000000 
+	illum 2
+	Ka 1.000000 1.000000 1.000000
+	Kd 1.000000 1.000000 1.000000
+	Ks 0.000000 0.000000 0.000000
+	Ke 0.000000 0.000000 0.000000
+
+newmtl Material__9
+	Ns 25.000000
+	Ni 1.500000
+	d 1.000000
+	Tr 0.000000
+	Tf 1.000000 1.000000 1.000000 
+	illum 2
+	Ka 0.213070 0.183005 0.064052
+	Kd 0.639216 0.549020 0.192157
+	Ks 0.477000 0.477000 0.477000
+	Ke 0.000000 0.000000 0.000000
+	map_Ka G:\Downloads\plastic-basket-canastas-plasticas-1.snapshot.1\END\2.jpg
+	map_Kd G:\Downloads\plastic-basket-canastas-plasticas-1.snapshot.1\END\2.jpg
+
+newmtl Verde_B1
+	Ns 41.000000
+	Ni 1.500000
+	d 1.000000
+	Tr 0.000000
+	Tf 1.000000 1.000000 1.000000 
+	illum 2
+	Ka 0.588235 0.588235 0.588235
+	Kd 0.588235 0.588235 0.588235
+	Ks 0.549000 0.549000 0.549000
+	Ke 0.000000 0.000000 0.000000
+	map_Ka G:\Downloads\plastic-basket-canastas-plasticas-1.snapshot.1\END\Canasta_60x40x13_Roja_2_diffuse.png
+	map_Kd G:\Downloads\plastic-basket-canastas-plasticas-1.snapshot.1\END\Canasta_60x40x13_Roja_2_diffuse.png
+	map_bump Map__4_Normal_Bump.tga
