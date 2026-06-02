@@ -6,18 +6,27 @@ public class MenuManager : MonoBehaviour
     public GameObject menuPanel;
     public GameObject videoPanel;
 
-    public void OpenMenu()
-    {
-        menuButton.SetActive(false);
+    private bool isOpen = false;
 
-        menuPanel.SetActive(true);
-        videoPanel.SetActive(false);
+    public void ToggleMenu()
+    {
+        isOpen = !isOpen;
+
+        menuButton.SetActive(!isOpen);
+        menuPanel.SetActive(isOpen);
+
+        if (videoPanel != null)
+            videoPanel.SetActive(!isOpen);
     }
 
     public void CloseMenu()
     {
-        menuPanel.SetActive(false);
+        isOpen = false;
 
+        menuPanel.SetActive(false);
         menuButton.SetActive(true);
+
+        if (videoPanel != null)
+            videoPanel.SetActive(true);
     }
 }
