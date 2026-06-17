@@ -3,35 +3,85 @@ using UnityEngine.Video;
 
 public class VideoManager : MonoBehaviour
 {
-    public VideoPlayer videoPlayer;
-    public GameObject videoPanel;
+    public GameObject videoScreen;
     public GameObject menuPanel;
 
-    public VideoClip[] videos;
+    public GameObject menuButton;
 
-    void Start()
+    public VideoPlayer videoPlayer;
+
+
+    public VideoClip farmacoterapiaVideo;
+    public VideoClip psicoterapiaVideo;
+    public VideoClip neuromodulacionVideo;
+    public VideoClip prevalenciaVideo;
+
+
+    private void Start()
     {
-        videoPlayer.loopPointReached += EndVideo;
+        videoPlayer.loopPointReached += VideoFinished;
     }
 
-    public void PlayVideo(int index)
+
+    public void PlayFarmacoterapia()
     {
-        videoPanel.SetActive(true);
+        PlayVideo(farmacoterapiaVideo);
+    }
+
+
+    public void PlayPsicoterapia()
+    {
+        PlayVideo(psicoterapiaVideo);
+    }
+
+
+    public void PlayNeuromodulacion()
+    {
+        PlayVideo(neuromodulacionVideo);
+    }
+
+
+    public void PlayPrevalencia()
+    {
+        PlayVideo(prevalenciaVideo);
+    }
+
+
+
+    void PlayVideo(VideoClip clip)
+    {
         menuPanel.SetActive(false);
 
-        videoPlayer.clip = videos[index];
+        videoScreen.SetActive(true);
+
+
+        videoPlayer.clip = clip;
+
         videoPlayer.Play();
     }
 
-    public void CloseVideo()
+
+
+    void VideoFinished(VideoPlayer vp)
     {
         videoPlayer.Stop();
-        videoPanel.SetActive(false);
+
+        videoScreen.SetActive(false);
+
         menuPanel.SetActive(true);
     }
 
-    void EndVideo(VideoPlayer vp)
-    {
-        CloseVideo();
-    }
+
+
+    public void CloseMenu()
+{
+    menuPanel.SetActive(false);
+    menuButton.SetActive(true);
+}
+
+   public void ToggleMenu()
+{
+    menuPanel.SetActive(true);
+    menuButton.SetActive(false);
+}
 }
