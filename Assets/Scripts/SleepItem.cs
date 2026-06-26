@@ -6,8 +6,19 @@ public class SleepItem : MonoBehaviour
 
     public Sprite itemIcon;
 
+
+    public bool fueSeleccionado = false;
+
+
     public void Selected()
     {
+        if (fueSeleccionado)
+            return;
+
+
+        fueSeleccionado = true;
+
+
         manager.AddIcon(itemIcon);
 
         Debug.Log(gameObject.name + " seleccionado");

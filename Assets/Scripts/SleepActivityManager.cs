@@ -1,10 +1,19 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class SleepActivityManager : MonoBehaviour
 {
     public Transform selectedItemsPanel;
     public GameObject iconTemplate;
+
+
+    public SleepItem[] objetosCorrectos;
+
+
+    public TMP_Text feedbackText;
+
+
 
     public void AddIcon(Sprite icon)
     {
@@ -16,4 +25,35 @@ public class SleepActivityManager : MonoBehaviour
 
         image.sprite = icon;
     }
+
+
+
+    public void CheckAnswers()
+    {
+        int faltantes = 0;
+
+
+        foreach(SleepItem item in objetosCorrectos)
+        {
+            if(!item.fueSeleccionado)
+            {
+                faltantes++;
+            }
+        }
+
+
+
+        if(faltantes == 0)
+        {
+            feedbackText.text = "¡Excelente! Identificaste todos los objetos.";
+        }
+
+        else
+        {
+            feedbackText.text = "Buen intento. Aún te faltan "
+                                + faltantes
+                                + " objetos por identificar.";
+        }
+    }
+
 }
