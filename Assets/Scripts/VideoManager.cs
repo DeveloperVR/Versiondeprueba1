@@ -10,6 +10,9 @@ public class VideoManager : MonoBehaviour
 
     public VideoPlayer videoPlayer;
 
+    public AudioSource audioIsa;
+    public AudioClip audioDespedida;
+
 
     public VideoClip farmacoterapiaVideo;
     public VideoClip psicoterapiaVideo;
@@ -47,19 +50,16 @@ public class VideoManager : MonoBehaviour
     }
 
 
-
     void PlayVideo(VideoClip clip)
     {
         menuPanel.SetActive(false);
 
         videoScreen.SetActive(true);
 
-
         videoPlayer.clip = clip;
 
         videoPlayer.Play();
     }
-
 
 
     void VideoFinished(VideoPlayer vp)
@@ -72,16 +72,19 @@ public class VideoManager : MonoBehaviour
     }
 
 
-
     public void CloseMenu()
-{
-    menuPanel.SetActive(false);
-    menuButton.SetActive(true);
-}
+    {
+        menuPanel.SetActive(false);
+        menuButton.SetActive(true);
 
-   public void ToggleMenu()
-{
-    menuPanel.SetActive(true);
-    menuButton.SetActive(false);
-}
+        audioIsa.clip = audioDespedida;
+        audioIsa.Play();
+    }
+
+
+    public void ToggleMenu()
+    {
+        menuPanel.SetActive(true);
+        menuButton.SetActive(false);
+    }
 }
