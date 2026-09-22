@@ -4,37 +4,96 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class TapeteVideo : MonoBehaviour
 {
-    [SerializeField] private VideoPlayer videoPlayer;
+[SerializeField] private VideoPlayer videoPlayer;
+[SerializeField] private GameObject iconoTapete;
+[SerializeField] private GameObject kai;
+[SerializeField] private Transform puntoKai;
+[SerializeField] private AudioClip audio2;
+[SerializeField] private Transform puntoKai2;
+[SerializeField] private AudioClip audio3;
 
-    private TeleportationArea teleportationArea;
+private TeleportationArea teleportationArea;
+private AudioSource kaiAudioSource;
 
-    private void Awake()
+private void Awake()
+{
+    teleportationArea = GetComponent<TeleportationArea>();
+
+    if (kai != null)
     {
-        teleportationArea = GetComponent<TeleportationArea>();
+        kaiAudioSource = kai.GetComponent<AudioSource>();
+    }
+}
+
+private void OnEnable()
+{
+    if (teleportationArea != null)
+    {
+        teleportationArea.selectExited.AddListener(OnTeleportationCompleted);
     }
 
-    private void OnEnable()
+    if (videoPlayer != null)
     {
-        if (teleportationArea != null)
+        videoPlayer.loopPointReached += OnVideoFinished;
+    }
+}
+
+private void OnDisable()
+{
+    if (teleportationArea != null)
+    {
+        teleportationArea.selectExited.RemoveListener(OnTeleportationCompleted);
+    }
+
+    if (videoPlayer != null)
+    {
+        videoPlayer.loopPointReached -= OnVideoFinished;
+    }
+}
+
+private void OnTeleportationCompleted(SelectExitEventArgs args)
+{
+    if (iconoTapete != null)
+    {
+        iconoTapete.SetActive(false);
+    }
+
+    if (videoPlayer != null)
+    {
+        videoPlayer.gameObject.SetActive(true);
+        videoPlayer.Play();
+    }
+}
+
+private void OnVideoFinished(VideoPlayer vp)
+{
+    videoPlayer.gameObject.SetActive(false);
+
+    if (kai == null)
+        return;
+
+    if (puntoKai2 != null && audio3 != null)
+    {
+        kai.transform.position = puntoKai2.position;
+        kai.SetActive(true);
+
+        if (kaiAudioSource != null)
         {
-            teleportationArea.selectExited.AddListener(OnTeleportationCompleted);
+            kaiAudioSource.clip = audio3;
+            kaiAudioSource.Play();
         }
     }
-
-    private void OnDisable()
+    else if (puntoKai != null && audio2 != null)
     {
-        if (teleportationArea != null)
+        kai.transform.position = puntoKai.position;
+        kai.SetActive(true);
+
+        if (kaiAudioSource != null)
         {
-            teleportationArea.selectExited.RemoveListener(OnTeleportationCompleted);
+            kaiAudioSource.clip = audio2;
+            kaiAudioSource.Play();
         }
     }
+}
 
-    private void OnTeleportationCompleted(SelectExitEventArgs args)
-    {
-        if (videoPlayer != null)
-        {
-            videoPlayer.gameObject.SetActive(true);
-            videoPlayer.Play();
-        }
-    }
 }

@@ -3,6 +3,9 @@ using UnityEngine;
 public class KaiSequence : MonoBehaviour
 {
 [SerializeField] private GameObject iconoTapete1;
+[SerializeField] private GameObject iconoTapete2;
+[SerializeField] private AudioClip audio2;
+[SerializeField] private AudioClip audio3;
 
 private AudioSource audioSource;
 private bool audioComenzo = false;
@@ -12,9 +15,10 @@ void Start()
     audioSource = GetComponent<AudioSource>();
 
     if (iconoTapete1 != null)
-    {
         iconoTapete1.SetActive(false);
-    }
+
+    if (iconoTapete2 != null)
+        iconoTapete2.SetActive(false);
 }
 
 void Update()
@@ -29,12 +33,24 @@ void Update()
 
     if (audioComenzo && !audioSource.isPlaying)
     {
-        if (iconoTapete1 != null)
+        if (audioSource.clip == audio3)
         {
-            iconoTapete1.SetActive(true);
+            gameObject.SetActive(false);
         }
+        else if (audioSource.clip == audio2)
+        {
+            if (iconoTapete2 != null)
+                iconoTapete2.SetActive(true);
 
-        gameObject.SetActive(false);
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            if (iconoTapete1 != null)
+                iconoTapete1.SetActive(true);
+
+            gameObject.SetActive(false);
+        }
     }
 }
 
