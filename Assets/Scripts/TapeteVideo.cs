@@ -75,6 +75,7 @@ private void OnVideoFinished(VideoPlayer vp)
     if (puntoKai2 != null && audio3 != null)
     {
         kai.transform.position = puntoKai2.position;
+        kai.transform.rotation = Quaternion.Euler(0f, -291.917f, 0f);
         kai.SetActive(true);
 
         if (kaiAudioSource != null)
@@ -86,6 +87,7 @@ private void OnVideoFinished(VideoPlayer vp)
     else if (puntoKai != null && audio2 != null)
     {
         kai.transform.position = puntoKai.position;
+        kai.transform.rotation = Quaternion.Euler(0f, -137.463f, 0f);
         kai.SetActive(true);
 
         if (kaiAudioSource != null)
