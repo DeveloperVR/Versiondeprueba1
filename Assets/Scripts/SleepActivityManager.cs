@@ -11,6 +11,8 @@ public class SleepActivityManager : MonoBehaviour
 
     public TMP_Text feedbackText;
 
+    public SleepSequence sleepSequence;
+
     public void AddIcon(Sprite icon)
     {
         GameObject newIcon = Instantiate(iconTemplate, selectedItemsPanel);
@@ -37,6 +39,8 @@ public class SleepActivityManager : MonoBehaviour
         if (faltantes == 0)
         {
             feedbackText.text = "¡Excelente!\nIdentificaste todos los objetos.";
+
+            sleepSequence.ActivarAudioFinal();
         }
         else
         {
