@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 public class ConsultorioManager : MonoBehaviour
@@ -6,6 +7,7 @@ public class ConsultorioManager : MonoBehaviour
     public AudioClip audioDespedida;
     public GameObject menuButton;
     public GameObject menuPanel;
+    public GameObject isa;
 
     private bool bienvenidaTerminada = false;
     private bool despedidaReproducida = false;
@@ -24,6 +26,13 @@ public class ConsultorioManager : MonoBehaviour
             bienvenidaTerminada = true;
             menuButton.SetActive(true);
         }
+
+        // Cuando termina la despedida, Isa desaparece
+        if (despedidaReproducida && !audioIsa.isPlaying)
+        {
+            isa.SetActive(false);
+            enabled = false;
+        }
     }
 
     public void CerrarMenu()
@@ -39,3 +48,4 @@ public class ConsultorioManager : MonoBehaviour
         }
     }
 }
+
