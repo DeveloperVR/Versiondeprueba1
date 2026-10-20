@@ -1,38 +1,70 @@
+
 using UnityEngine;
 
 public class KaiSequence : MonoBehaviour
 {
-[SerializeField] private GameObject iconoTapete1;
-[SerializeField] private GameObject iconoTapete2;
-[SerializeField] private AudioClip audio2;
-[SerializeField] private AudioClip audio3;
+    [SerializeField] private GameObject iconoTapete1;
+    [SerializeField] private GameObject iconoTapete2;
+    [SerializeField] private AudioClip audio2;
+    [SerializeField] private AudioClip audio3;
+    [SerializeField] private BloqueoInteraccionSala3 bloqueoInteraccion;
 
-private AudioSource audioSource;
-private bool audioComenzo = false;
+    private AudioSource audioSource;
+    private bool audioComenzo = false;
+    private bool audioProcesado = false;
 
-void Start()
-{
-    audioSource = GetComponent<AudioSource>();
-
-    if (iconoTapete1 != null)
-        iconoTapete1.SetActive(false);
-
-    if (iconoTapete2 != null)
-        iconoTapete2.SetActive(false);
-}
-
-void Update()
-{
-    if (audioSource == null)
-        return;
-
-    if (audioSource.isPlaying)
+    private void Awake()
     {
-        audioComenzo = true;
+        audioSource = GetComponent<AudioSource>();
     }
 
-    if (audioComenzo && !audioSource.isPlaying)
+    private void OnEnable()
     {
+        audioComenzo = false;
+        audioProcesado = false;
+    }
+
+    private void Start()
+    {
+        if (iconoTapete1 != null)
+            iconoTapete1.SetActive(false);
+
+        if (iconoTapete2 != null)
+            iconoTapete2.SetActive(false);
+
+        if (audioSource != null && audioSource.isPlaying)
+        {
+            audioComenzo = true;
+
+            if (bloqueoInteraccion != null)
+                bloqueoInteraccion.Bloquear();
+        }
+    }
+
+    private void Update()
+    {
+        if (audioSource == null || audioProcesado)
+            return;
+
+        if (audioSource.isPlaying)
+        {
+            audioComenzo = true;
+
+            if (bloqueoInteraccion != null)
+                bloqueoInteraccion.Bloquear();
+
+            return;
+        }
+
+        if (!audioComenzo)
+            return;
+
+        audioProcesado = true;
+        audioComenzo = false;
+
+        if (bloqueoInteraccion != null)
+            bloqueoInteraccion.Desbloquear();
+
         if (audioSource.clip == audio3)
         {
             gameObject.SetActive(false);
@@ -52,6 +84,4 @@ void Update()
             gameObject.SetActive(false);
         }
     }
-}
-
 }
