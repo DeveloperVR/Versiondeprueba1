@@ -1,12 +1,11 @@
+
 using UnityEngine;
 using UnityEngine.Video;
-using UnityEngine.SceneManagement;
 
 public class VideoManager : MonoBehaviour
 {
     public GameObject videoScreen;
     public GameObject menuPanel;
-
     public GameObject menuButton;
 
     public GameObject isa;
@@ -41,7 +40,7 @@ public class VideoManager : MonoBehaviour
         if (despedidaReproduciendose && !audioIsa.isPlaying)
         {
             despedidaReproduciendose = false;
-            SceneManager.LoadScene("HUB");
+            isa.SetActive(false);
         }
     }
 
@@ -65,21 +64,18 @@ public class VideoManager : MonoBehaviour
         PlayVideo(prevalenciaVideo);
     }
 
-    void PlayVideo(VideoClip clip)
+    private void PlayVideo(VideoClip clip)
     {
         menuPanel.SetActive(false);
-
         videoScreen.SetActive(true);
 
         videoPlayer.clip = clip;
-
         videoPlayer.Play();
     }
 
-    void VideoFinished(VideoPlayer vp)
+    private void VideoFinished(VideoPlayer vp)
     {
         videoPlayer.Stop();
-
         videoScreen.SetActive(false);
 
         MarcarVideoComoVisto(vp.clip);
@@ -92,7 +88,7 @@ public class VideoManager : MonoBehaviour
         menuPanel.SetActive(true);
     }
 
-    void MarcarVideoComoVisto(VideoClip clip)
+    private void MarcarVideoComoVisto(VideoClip clip)
     {
         if (clip == farmacoterapiaVideo)
         {
@@ -112,7 +108,7 @@ public class VideoManager : MonoBehaviour
         }
     }
 
-    bool TodosLosVideosFueronVistos()
+    private bool TodosLosVideosFueronVistos()
     {
         return farmacoterapiaVista &&
                psicoterapiaVista &&
